@@ -25,4 +25,4 @@ exports.TILE_SIZE = exports.SCREEN_WIDTH / exports.BOARD_COLS;
 exports.BOARD_OFFSET = exports.SCREEN_HEIGHT - exports.BOARD_ROWS * exports.TILE_SIZE;
 exports.BOARD_OFFSET2 = exports.DEVICE_HEIGHT - exports.BOARD_ROWS * exports.TILE_SIZE;
 exports.TIME_LIMIT = 60000, //60 secs
-exports.TILE_SPEED = 8;
+exports.TILE_SPEED = 10;
