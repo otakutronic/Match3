@@ -18,5 +18,5 @@ That's it! Run the simulator and open the Match3 project.
 
 ##Play the Game:
 [Play in the
-Browser](http://nobooco.sakura.ne.jp/ag/Match3/index.html)
+Browser](http://nobooco.sakura.ne.jp/ag/match3/index.html)
 
