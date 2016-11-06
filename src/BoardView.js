@@ -67,7 +67,7 @@ exports = Class(ui.View, function (supr) {
         return states;
     }
 
-     // call this to set board to swap 
+    // call this to set board to swap 
     this.onPressed = function (x1, y1, x2, y2, matchType) { 
         updateMoves(x1, y1);
         updateMoves(x2, y2);
@@ -137,14 +137,14 @@ exports = Class(ui.View, function (supr) {
         this.state = states.drop;
     }
 
-     // update tile to fall down to new place 
+    // update tile to fall down to new place 
     this.shiftTiles = function (toX, toY, fromX, fromY, tile) {
         tiles[toX][toY] = getTile(fromX, fromY);
         tiles[toX][toY].setTile(fromX, toY, tile);
         this.state = states.drop;
     }
 
-     // main loop
+    // main loop
     this.onUpdate = function () {
         switch(this.state) {
             case states.drop:
