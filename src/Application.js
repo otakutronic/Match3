@@ -1,5 +1,5 @@
 /*
- * The main application file, your game code begins here.
+ * The main application file
  */
 
 //sdk imports
@@ -43,9 +43,8 @@ exports = Class(GC.Application, function (opts) {
 		rootView.push(gamescreen);
 		gamescreen.emit('app:start');
 
-		/* When the game screen has signalled that the game is over,
-		 * show the title screen so that the user may play the game again.
-		 */
+		// When the game screen has signalled that the game is over,
+		// allow to play the game again.
 		gamescreen.on('gamescreen:end', function () {
 			gamescreen.emit('app:start');
 		});

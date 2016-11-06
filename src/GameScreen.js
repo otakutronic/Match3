@@ -54,13 +54,14 @@ exports = Class(ui.View, function (supr) {
 		 */
 		this.on('app:start', start_game_flow.bind(this));
        
+		 // add board view and listener
 		boardView = new BoardView();
 		this.addSubview(boardView);
 		boardView.on('board:update', bind(this, function (args) {
 			on_board_update(this, args);
 		}));
 
-		// add board and listener
+		// create board model and listener
 		boardModel = new BoardModel();
 		boardModel.on('board:update', bind(this, function (args) {
 			on_board_update(this, args);
@@ -127,13 +128,13 @@ function on_board_update (obj, args) {
 	} else if (args.type == 'board:add') {
 		boardView.fillBoard(args.dataTiles);
 	} else if (args.type == 'board:goodswap') { 
-		boardView.trySwap(args.x1, args.y1, args.x2, args.y2, true);
+		boardView.onPressed(args.x1, args.y1, args.x2, args.y2, true);
 	} else if (args.type == 'board:badswap') {
-		boardView.trySwap(args.x1, args.y1, args.x2, args.y2, false);
+		boardView.onPressed(args.x1, args.y1, args.x2, args.y2, false);
 	} else if (args.type == 'board:check') {
 		boardModel.check();
 	} else if (args.type == 'board:shift') {
-		boardView.shiftTiles(args.toX, args.toY, args.fromX, args.fromY, args.tile);
+		boardView.shiftTiles(args.x1, args.y1, args.x2, args.y2, args.tile);
 	} else if (args.type == 'board:addTile') {
 		boardView.addTile(args.x, args.y, args.tile, args.offset);
 	} else if (args.type == 'board:reset') {

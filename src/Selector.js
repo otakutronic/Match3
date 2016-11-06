@@ -22,17 +22,6 @@ exports = Class(ui.View, function (supr) {
 		this.reset();
 	};
 
-	 // hide up the selector
-    this.reset = function () {
-        this.setSelector(Constants.SCREEN_WIDTH*2, 0);
-    }
-
-    // positions the selector at the cell
-    this.setSelector = function (col, row) {
-        this._selectorview.style.x = (col * Constants.TILE_SIZE); 
-        this._selectorview.style.y = (row * Constants.TILE_SIZE) + Constants.BOARD_OFFSET; 
-    }
-
 	// Layout
 	this.build = function () {
 		this._inputview = new ui.View({
@@ -53,4 +42,15 @@ exports = Class(ui.View, function (supr) {
 			height: Constants.TILE_SIZE
 		});
 	};
+
+	// hide up the selector
+    this.reset = function () {
+        this.setSelector(Constants.SCREEN_WIDTH*2, 0);
+    }
+
+    // positions the selector at the cell
+    this.setSelector = function (col, row) {
+        this._selectorview.style.x = (col * Constants.TILE_SIZE); 
+        this._selectorview.style.y = (row * Constants.TILE_SIZE) + Constants.BOARD_OFFSET; 
+    }
 });

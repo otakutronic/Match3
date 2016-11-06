@@ -28,8 +28,28 @@ exports = Class(ui.View, function (supr) {
 		});
 
 		supr(this, 'init', [opts]);
-
 		this.build();
+	};
+
+	// Layout
+	this.build = function () {
+		this._inputview = new ui.View({
+			superview: this,
+			clip: false,
+			x: 0,
+			y: 0,
+			width: Constants.TILE_SIZE,
+			height: Constants.TILE_SIZE,
+		});
+
+		this._tileview = new ui.ImageView({
+			superview: this._inputview,
+			image: tileImages[0],
+			x: 0,
+			y: 0,
+			width: Constants.TILE_SIZE,
+			height: Constants.TILE_SIZE
+		});
 	};
 
 	// set the tiles type, col and row
@@ -79,25 +99,4 @@ exports = Class(ui.View, function (supr) {
 			this.moving = true;
 		}
 	}
-
-	// Layout
-	this.build = function () {
-		this._inputview = new ui.View({
-			superview: this,
-			clip: false,
-			x: 0,
-			y: 0,
-			width: Constants.TILE_SIZE,
-			height: Constants.TILE_SIZE,
-		});
-
-		this._tileview = new ui.ImageView({
-			superview: this._inputview,
-			image: tileImages[0],
-			x: 0,
-			y: 0,
-			width: Constants.TILE_SIZE,
-			height: Constants.TILE_SIZE
-		});
-	};
 });

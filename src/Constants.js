@@ -17,7 +17,6 @@ import src.lib.Enum as Enum;
 
 exports.SCREEN_WIDTH = 320;
 exports.SCREEN_HEIGHT = 480;
-exports.DEVICE_HEIGHT = 320;
 exports.BOARD_COLS = 6;
 exports.BOARD_ROWS = 6;
 exports.NUM_OF_TILE_TYPES = 5;
