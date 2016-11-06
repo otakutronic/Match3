@@ -192,7 +192,6 @@ exports = Class(ui.View, function (supr) {
         }
     }
 
-
     // moves the tiles 
     function moveTiles () {
         tilesMoving = false;
